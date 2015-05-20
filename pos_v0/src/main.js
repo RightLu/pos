@@ -8,7 +8,7 @@ function printInventory(inputs) {
         '，单价：' + inputs[i].price.toFixed(2) + '(元)'+
         '，小计：' + (parseInt(inputs[i].price)*parseInt(inputs[i].count)).toFixed(2) +'(元)\n';
 
-        sum += (parseInt(inputs[i].price)*parseInt(inputs[i].count)).toFixed(2);
+        sum += (parseInt(inputs[i].price)*parseInt(inputs[i].count));
     }
     result += '----------------------\n';
     result += '总计：'+sum.toFixed(2)+'(元)\n';
