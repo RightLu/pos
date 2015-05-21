@@ -4,7 +4,6 @@ function printInventory(inputs) {
 
     for (var i=0; i<inputs.length; i++) {
         var exist = false;
-        var temp = {};
 
         for (var j=0; j<sum_list.length; j++) {
             if (inputs[i].name === sum_list[j].name) {
