@@ -14,10 +14,12 @@ function printInventory(inputs) {
         }
 
         if (!exist) {
-            temp.name = inputs[i].name;
-            temp.unit = inputs[i].unit;
-            temp.price = inputs[i].price;
-            temp.count = 1;
+            var temp = {
+                name : inputs[i].name,
+                unit : inputs[i].unit,
+                price : inputs[i].price,
+                count : 1
+            };
             sum_list.push(temp);
         }
     }
