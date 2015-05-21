@@ -1,11 +1,9 @@
 function printInventory(inputs) {
-    var result = '***<没钱赚商店>购物清单***\n';
     var all_items = loadAllItems();
     var sum_list = [];
 
     for (var i=0; i<inputs.length; i++) {
         var exist = false;
-        var temp = {};
 
         for (var x=0; x<all_items.length; x++) {
             if (inputs[i] === all_items[x].barcode) {
@@ -16,16 +14,19 @@ function printInventory(inputs) {
                     }
                 }
                 if (!exist) {
-                    temp.name = all_items[x].name;
-                    temp.unit = all_items[x].unit;
-                    temp.price = all_items[x].price;
-                    temp.count = 1;
-                    sum_list.push(temp);
+                    var new_item = {
+                        name : all_items[x].name,
+                        unit : all_items[x].unit,
+                        price : all_items[x].price,
+                        count : 1
+                    };
+                    sum_list.push(new_item);
                 }
             }
         }
     }
 
+    var result = '***<没钱赚商店>购物清单***\n';
     var total_price = 0;
     for (var z=0; z<sum_list.length; z++) {
         result += '名称：'+ sum_list[z].name + '，' +
